@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>inscription</title>
+
+    <link rel="stylesheet" href="inscription.css">
+
+  </head>
+
+  <body>
+
+  <h1 id="titre">Take A Tchat</h1>
+
+  <div class="container">
+
+    <form  class="formu" name="myform"  method="post" onsubmit="return validation()">
+
+                <input id="username"  type="text" name="username" placeholder="Username"  >
+
+               <spanid="prenom_manquant"></span>
+
+
+                <input id="mail"  type="email" name="mail" placeholder="Mail" >
+                <input id="password" type="password" name="password" placeholder="Mot de passe" >
+                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="Confirme Mot de passe" >
+
+
+                <input id="forminscription"class="button" type="submit" name="forminscription" value="inscription">
+
+    </form>
+
+  </div>
+
+
+
+
+   <script src="script.js"></script>
+
+    </script>
+  </body>
+</html>
