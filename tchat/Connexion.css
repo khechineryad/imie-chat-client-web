@@ -33,7 +33,7 @@ input{
   text-decoration: none;
 }
 
-.form-input::before{
+.formco::before{
 
   position: absolute;
   font-size: 30px;

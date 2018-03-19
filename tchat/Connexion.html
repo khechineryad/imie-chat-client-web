@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Connexion</title>
-    <link rel="stylesheet"  href="vendors/bootstrap/css/bootstrap.min.css">
+
     <link rel="stylesheet" href="Connexion.css">
 
   </head>
@@ -14,10 +14,10 @@
 
   <div class="container">
 
-    <form class="form-input" action="" method="post">
-          <input id="mail"  type="email" name="mailConnect" placeholder="Mail" >
-          <input id="password" type="password" name="mdpConnect" placeholder="Mot de passe">
-          <input id="boutonvalid" class="button" type="submit" name="formConnexion" value="Connexion">
+    <form class="formco" name="formco" action="" method="post" onsubmit="return connect()">
+          <input id="email"  type="email" name="email" placeholder="eMail" >
+          <input id="password" type="password" name="password" placeholder="Mot de passe">
+          <input id="formco" class="button" type="submit" name="formco" value="Connexion">
 
     </form>
     <a href="lien">S'inscrire</a>
@@ -26,9 +26,6 @@
 
 
 
-
-   <script src="vendors/jquery/jquery.min.js"></script>
-   <script src="vendors/popper/popper.min.js"></script>
-   <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
   </body>
 </html>
