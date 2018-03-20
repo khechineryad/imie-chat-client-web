@@ -1,18 +1,17 @@
 var ws = new WebSocket("ws://localhost:8083");
-ws.onmessage = function processMessage(message){
-var Msg = {
-     type : "message",
-     text : document.getElementById('messageText').value,
-     id : id_utilisateur, 
-     date : Date.now(),
-   };
-
-
-  var JSONDATA = JSON.parse(message.data);
-  if (JSONDATA.message != null) messages.value += JSONDATA.message + "\n";
-}
 
 function sendMessage(){
-  ws.send(Msg.value);
-  Msg.value = "";
+ var Msg = {
+      type : "message",
+      text : document.getElementById('messagestext').value,
+      date : Date.now(),
+    };
+ws.send(JSON.stringify(Msg));
+
+document.getElementById("messagestext").value = "";
+}
+
+ws.onmessage = function (event) {
+console.log(event.data);
+alert("message envoyer");
 }

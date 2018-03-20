@@ -73,13 +73,13 @@ function connect(){
 
   var mon_objet2 = {
     type : "connexion",
-    email : document.myform.email.value,
-    password : document.myform.password.value,
+    email : document.formco.email.value,
+    password : document.formco.password.value,
 
   };
 
   var email = document.getElementById('email').value;
-  alert(mail);
+  alert(email);
 
   var password = document.getElementById('password').value;
   alert(password);
@@ -96,7 +96,7 @@ function connect(){
   }
 
   else {
-    alert("vous êtes cococococococo");
+    alert("vous êtes cococo");
 
   }
 
@@ -105,5 +105,6 @@ function connect(){
 
   console.log(toSend2);
   ws.send(toSend2);
+  alert("connect");
 
 }
