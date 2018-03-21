@@ -97,7 +97,6 @@ function connect(){
 
   else {
     alert("vous êtes cococo");
-
   }
 
 
@@ -106,5 +105,17 @@ function connect(){
   console.log(toSend2);
   ws.send(toSend2);
   alert("connect");
+
+
+  ws.onmessage = function (event) {
+  var msg = JSON.parse(event.data);
+  var msg2 = JSON.parse(msg);
+  console.log(msg2);
+  console.log(msg2.username);
+  console.log(msg2.idUser);
+
+  alert("Bonjour "+msg2.username+" ,vous avez l'ID "+msg2.idUser);
+}
+
 
 }
