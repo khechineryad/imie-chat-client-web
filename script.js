@@ -32,6 +32,13 @@ function inscription() {
   var confirmpassword = document.getElementById('confirmpassword').value;
   alert(confirmpassword);
 
+  if (confirmpassword != password) {
+    alert("les mots de passe sont différents")
+    return false;
+  } else {
+
+  }
+
 
   if (document.myform.username.value == "") {
     alert("remplir votre name");
@@ -65,4 +72,7 @@ function inscription() {
   console.log(toSend);
   ws.send(toSend);
   alert("merci");
+
+
+
 }
