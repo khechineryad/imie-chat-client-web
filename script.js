@@ -66,3 +66,7 @@ function inscription() {
   ws.send(toSend);
   alert("merci");
 }
+ws.onmessage = function (event) {
+  console.log(event.data);
+  alert(event.data);
+}
