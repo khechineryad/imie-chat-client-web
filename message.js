@@ -1,41 +1,35 @@
 var ws = new WebSocket("ws://localhost:8083");
 
+
+
 function sendMessage(){
+
+ var date = new Date();
+ var heure = date.getHours();
+ var minutes = date.getMinutes();
+
  var Msg = {
       type : "message",
       text : document.getElementById('messagestext').value,
-      date : Date.now(),
+      dateHours : heure,
+      dateMinutes : minutes,
     };
 ws.send(JSON.stringify(Msg));
 
-document.getElementById("messagestext").value = "";
 
 
+if (document.getElementById("messagestext").value != "") {
+ document.getElementById("messagestext").value = "";
+ document.getElementById('messagesTextArea').append(String("\n" + "["+ Msg.dateHours + "h" + Msg.dateMinutes + "]" + "Username: " + Msg.text + "\n"));
+
+} else {
+
+
+}
+
+
+
+}
 ws.onmessage = function (event) {
-console.log(event.data);
-alert("message envoyer");
-}
-}
-
-
-
-
-
-function afficheMessage(){
-  var meme = {
-    type : "affiche",
-    text : document.getElementById('messagesTextArea').value,
-    date : Date.now(),
-  };
-
-
-  ws.send(JSON.stringify(meme));
-
-  document.getElementById("messagesTextArea").value = "";
-
-
-  ws.onmessage = function (event) {
-  console.log(event.data);
-  alert("message envoyer");
-  }
+ console.log(event.data);
 }
