@@ -22,7 +22,6 @@ ws.send(JSON.stringify(Msg));
 
 
 
-
 ws.onmessage = function (event) {
 console.log(event.data);
 var msg1 = JSON.parse(event.data);
