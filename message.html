@@ -3,16 +3,30 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <script src="connexion.js"></script>
   </head>
   <body>
+
+  <ul id="myliste">
+  </ul>
+
   <textarea id="messagesTextArea"  readonly="readonly" rows="10" cols="45"></textarea>
   <br>
+  <form id="formulaire" class="" method="post" onkeypress="if(event.keyCode == 13) sendMessage();">
   <input type="text" id="messagestext" size="50" name="" value="">
   <input type="button"  value="send" onclick="sendMessage();">
-  
+
+  </form>
 
 
+  <input id="nomGroupe"type="text" name="" value="">
+  <input type="button" name="" value="ajouter un groupe" onclick="addGroupe();">
+
+
+  <script src="groupe.js"></script>
+  <script src="history.js"></script>
   <script src="message.js"></script>
+  <script src="received.js"></script>
 
   </body>
 </html>

@@ -1,4 +1,11 @@
-var ws = new WebSocket("ws://localhost:8083");
+// var titre = document.getElementById("titre");
+// alert(titre.innerHTML);
+// console.log(titre);
+
+//
+// var username = document.getElementById("username");
+// alert(username.innerHTML);
+// console.log(username);
 
 function connect(){
 
@@ -37,20 +44,6 @@ function connect(){
  console.log(toSend2);
  ws.send(toSend2);
  alert("connect");
+ 
 
-}
-ws.onmessage = function (event) {
-  console.log(event.data);
-  var msg1 = JSON.parse(event.data);
-  var msg = JSON.parse(msg1);
-
-  console.log(msg);
-  console.log(msg.username);
-  console.log(msg.idUser);
-  console.log(msg.key);
-
-  localStorage.setItem('sessionKey', msg.key);
-
-  alert("Bonjour "+msg.username+" ,vous avez l'ID "+msg.idUser+", la clé est "+msg.key);
-  document.location.href="message.html"
 }

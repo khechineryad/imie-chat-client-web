@@ -7,9 +7,6 @@
 // alert(username.innerHTML);
 // console.log(username);
 
-var ws = new WebSocket("ws://localhost:8083");
-
-
 function inscription() {
   var mon_objet = {
     type : "inscription",
@@ -31,13 +28,6 @@ function inscription() {
 
   var confirmpassword = document.getElementById('confirmpassword').value;
   alert(confirmpassword);
-
-  if (confirmpassword != password) {
-    alert("les mots de passe sont différents")
-    return false;
-  } else {
-
-  }
 
 
   if (document.myform.username.value == "") {
@@ -61,18 +51,11 @@ function inscription() {
   }
 
   else {
-    alert("vous êtes inscrit");
+    alert("Merci, vous êtes inscrit");
 
+    var toSend = JSON.stringify(mon_objet);
 
+    console.log(toSend);
+    ws.send(toSend);
   }
-
-
-  var toSend = JSON.stringify(mon_objet);
-
-  console.log(toSend);
-  ws.send(toSend);
-  alert("merci");
-
-
-
 }
